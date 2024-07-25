@@ -35,6 +35,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -64,9 +66,14 @@ fun AdminProfile() {
     var password by remember {
         mutableStateOf("")
     }
+    var passwordVisible by remember {
+        mutableStateOf(false)
+    }
 
     Column (
-        modifier = Modifier.fillMaxSize().padding(top = 16.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
         Row(modifier = Modifier
@@ -302,7 +309,7 @@ fun AdminProfile() {
             ) {
                 Text(
                     modifier = Modifier
-                        .weight(1.5f)
+                        .weight(1.7f)
                         .padding(5.dp),
                     text = "Password",
                     fontSize = 20.sp,
@@ -320,13 +327,21 @@ fun AdminProfile() {
                     BasicTextField(
                         value = password,
                         onValueChange = { password = it },
+                        visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
                     )
                 }
-                Icon(
-                    painter = painterResource(id = R.drawable.outline_visibility_off_24),
-                    contentDescription = null,
-                    tint = Color.Gray
-                )
+                IconButton(onClick = { passwordVisible =! passwordVisible}) {
+                    val iconResource = if (passwordVisible) {
+                        R.drawable.outline_visibility_24
+                    } else {
+                        R.drawable.outline_visibility_off_24
+                    }
+                    Icon(
+                        painter = painterResource(id = iconResource),
+                        contentDescription = null,
+                        tint = Color.Gray
+                    )
+                }
                 Icon(
                     modifier = Modifier.padding(5.dp),
                     painter = painterResource(id = R.drawable.rounded_edit_square_24),
