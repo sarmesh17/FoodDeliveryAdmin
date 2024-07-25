@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="mandy">#E85353</color>
+    <color name="thunderBird">#BE1515</color>
+    <color name="mySin">#FEAD1D</color>
+    <color name="pastelGreen">#53E88B</color>
+    <color name="wildSand">#F4F4F4</color>
+    <color name="shiraz">#BB0C24</color>
+    <color name="yPink">#ffcccc</color>
+
+    <color name="curiousBlue">#2986cc</color>
+    <color name="mineShaft">#3B3B3B</color>
 </resources>
