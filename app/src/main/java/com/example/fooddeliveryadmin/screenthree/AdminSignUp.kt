@@ -2,6 +2,7 @@ package com.example.fooddeliveryadmin.screenthree
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -21,8 +22,10 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -32,14 +35,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.fooddeliveryadmin.R
+import com.example.fooddeliveryadmin.navigation.Routes
 
-@Preview(showSystemUi = true)
 @Composable
-fun AdminSignUp() {
+fun AdminSignUp(navController: NavController) {
     val popFontFamily = FontFamily(
         Font(R.font.yeonsung_regular, FontWeight.Normal)
     )
@@ -55,8 +60,11 @@ fun AdminSignUp() {
     val email = remember {
         mutableStateOf("")
     }
-    val password = remember {
+    var password by remember {
         mutableStateOf("")
+    }
+    var passwordVisible by remember {
+        mutableStateOf(false)
     }
 
     Column (
@@ -175,8 +183,8 @@ fun AdminSignUp() {
                 )
             )
             Spacer(modifier = Modifier.height(8.dp))
-            OutlinedTextField(value = password.value, onValueChange = {
-                password.value = it
+            OutlinedTextField(value = password, onValueChange = {
+                password = it
             }, leadingIcon = {
                 Icon(
                     painter = painterResource(id = R.drawable.outline_lock_24),
@@ -191,11 +199,16 @@ fun AdminSignUp() {
                 colors = OutlinedTextFieldDefaults.colors(
                     focusedBorderColor = colorResource(id = R.color.wildSand),
                     unfocusedBorderColor = colorResource(id = R.color.wildSand),
-                ),
+                ), visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
                 trailingIcon = {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    val iconResource = if (passwordVisible){
+                        R.drawable.outline_visibility_24
+                    }else{
+                        R.drawable.outline_visibility_off_24
+                    }
+                    IconButton(onClick = { passwordVisible =! passwordVisible }) {
                         Icon(
-                            painter = painterResource(id = R.drawable.outline_visibility_off_24),
+                            painter = painterResource(id = iconResource),
                             contentDescription = "visibility"
                         )
                     }
@@ -204,7 +217,7 @@ fun AdminSignUp() {
         }
         Spacer(modifier = Modifier.height(16.dp))
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { /*TODO*/ navController.navigate(Routes.AdminDashboard) },
             modifier = Modifier
                 .size(165.dp, 60.dp)
                 .background(brush = gradient, shape = RoundedCornerShape(15.dp)),
@@ -224,7 +237,10 @@ fun AdminSignUp() {
             text = "Already Have An Account?",
             fontSize = 10.sp,
             fontWeight = FontWeight(700),
-            color = Color.Red
+            color = Color.Red,
+            modifier = Modifier.clickable {
+                navController.navigate(Routes.AdminLogin)
+            }
         )
         Spacer(modifier = Modifier.height(16.dp))
         Text(

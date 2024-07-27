@@ -2,6 +2,7 @@ package com.example.fooddeliveryadmin.screentwo
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -33,14 +34,14 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.fooddeliveryadmin.R
+import com.example.fooddeliveryadmin.navigation.Routes
 
-@Preview(showSystemUi = true)
 @Composable
-fun AdminLogin() {
+fun AdminLogin(navController: NavController) {
 
     val popFontFamily = FontFamily(
         Font(R.font.yeonsung_regular, FontWeight.Normal)
@@ -202,7 +203,7 @@ fun AdminLogin() {
             }
         }
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { /*TODO*/ navController.navigate(Routes.AdminDashboard)},
             modifier = Modifier
                 .size(160.dp, 60.dp)
                 .background(brush = gradient, shape = RoundedCornerShape(15.dp)),
@@ -222,7 +223,10 @@ fun AdminLogin() {
             text = "Don’t Have Account?",
             fontSize = 10.sp,
             fontWeight = FontWeight(700),
-            color = Color.Red
+            color = Color.Red,
+            modifier = Modifier.clickable {
+                navController.navigate(Routes.AdminSignUp)
+            }
         )
         Spacer(modifier = Modifier.height(16.dp))
         Text(

@@ -37,14 +37,14 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.fooddeliveryadmin.R
+import com.example.fooddeliveryadmin.navigation.Routes
 
-@Preview(showSystemUi = true)
 @Composable
-fun AdminProfile() {
+fun AdminProfile(navController: NavController) {
     val popFontFamily = FontFamily(
         Font(R.font.yeonsung_regular)
     )
@@ -80,7 +80,7 @@ fun AdminProfile() {
             .fillMaxWidth()
             .height(60.dp)) {
             IconButton(
-                onClick = { /*TODO*/ }
+                onClick = { navController.navigate(Routes.AdminDashboard) }
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.outline_arrow_circle_left_24),

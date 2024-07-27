@@ -2,6 +2,7 @@ package com.example.fooddeliveryadmin.screenfour
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -29,14 +30,14 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.fooddeliveryadmin.R
+import com.example.fooddeliveryadmin.navigation.Routes
 
-@Preview(showSystemUi = true)
 @Composable
-fun AdminDashboard() {
+fun AdminDashboard(navController: NavController) {
     val gradient = Brush.linearGradient(
         colors = listOf(colorResource(id = R.color.mandy), colorResource(id = R.color.thunderBird))
     )
@@ -157,6 +158,7 @@ fun AdminDashboard() {
                 }
             }
         }
+        // starts box
         Spacer(modifier = Modifier.height(32.dp))
         Row (
             modifier=Modifier.fillMaxWidth(),
@@ -167,6 +169,9 @@ fun AdminDashboard() {
                     .clip(RoundedCornerShape(16.dp))
                     .size(150.dp, 85.dp)
                     .background(color = colorResource(id = R.color.yPink))
+                    .clickable {
+                        navController.navigate(Routes.AddMenu)
+                    }
             ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
@@ -193,6 +198,9 @@ fun AdminDashboard() {
                     .size(150.dp, 85.dp)
                     .clip(RoundedCornerShape(16.dp))
                     .background(color = colorResource(id = R.color.yPink))
+                    .clickable {
+                        navController.navigate(Routes.AllMenuItem)
+                    }
             ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
@@ -226,6 +234,9 @@ fun AdminDashboard() {
                     .clip(RoundedCornerShape(16.dp))
                     .size(150.dp, 85.dp)
                     .background(color = colorResource(id = R.color.yPink))
+                    .clickable {
+                        navController.navigate(Routes.OutForDelivery)
+                    }
             ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
@@ -252,6 +263,9 @@ fun AdminDashboard() {
                     .size(150.dp, 85.dp)
                     .clip(RoundedCornerShape(16.dp))
                     .background(color = colorResource(id = R.color.yPink))
+                    .clickable {
+                        navController.navigate(Routes.AdminFeedback)
+                    }
             ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
@@ -285,6 +299,9 @@ fun AdminDashboard() {
                     .clip(RoundedCornerShape(16.dp))
                     .size(150.dp, 85.dp)
                     .background(color = colorResource(id = R.color.yPink))
+                    .clickable {
+                        navController.navigate(Routes.AdminProfile)
+                    }
             ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
@@ -344,6 +361,9 @@ fun AdminDashboard() {
                     .clip(RoundedCornerShape(16.dp))
                     .size(150.dp, 85.dp)
                     .background(color = colorResource(id = R.color.yPink))
+                    .clickable {
+                        navController.navigate(Routes.CreateNewUserAdmin)
+                    }
             ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
@@ -370,6 +390,9 @@ fun AdminDashboard() {
                     .size(150.dp, 85.dp)
                     .clip(RoundedCornerShape(16.dp))
                     .background(color = colorResource(id = R.color.yPink))
+                    .clickable {
+                        navController.navigate(Routes.AdminLogin)
+                    }
             ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
