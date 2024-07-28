@@ -215,6 +215,7 @@ fun AdminSignUp(navController: NavController) {
                 }
             )
         }
+        //button to create account
         Spacer(modifier = Modifier.height(16.dp))
         Button(
             onClick = { /*TODO*/ navController.navigate(Routes.AdminDashboard) },

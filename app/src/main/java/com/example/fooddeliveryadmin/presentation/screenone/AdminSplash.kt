@@ -72,7 +72,7 @@ fun AdminSplash(navController: NavController) {
             fontFamily = popFontFamily,
             color = Color.Red,
             modifier = Modifier.clickable {
-                navController.navigate(Routes.AdminLogin)
+                navController.navigate(Routes.AdminLogin) //navigation
             }
         )
     }

@@ -31,7 +31,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.fooddeliveryadmin.R
-import com.example.fooddeliveryadmin.navigation.Routes
 
 @Composable
 fun AdminFeedback(navController: NavController) {
@@ -51,7 +50,7 @@ fun AdminFeedback(navController: NavController) {
             .fillMaxWidth()
             .height(60.dp)) {
             IconButton(
-                onClick = { navController.navigate(Routes.AdminDashboard) }
+                onClick = { navController.navigateUp() }
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.outline_arrow_circle_left_24),

@@ -25,44 +25,46 @@ fun FoodDeliveryAdminNavigator() {
         navController = navController,
         startDestination = Routes.AdminSplash
     ) {
-        composable(route = Routes.AdminSplash){
+        composable<Routes.AdminSplash> { 
             AdminSplash(navController)
         }
 
-        composable(route = Routes.AdminLogin){
+        composable<Routes.AdminLogin> {
             AdminLogin(navController)
         }
 
-        composable(route = Routes.AdminSignUp){
+        composable<Routes.AdminSignUp> {
             AdminSignUp(navController)
         }
 
-        composable(route = Routes.AdminDashboard){
+        composable<Routes.AdminDashboard> {
             AdminDashboard(navController)
         }
 
-        composable(route = Routes.AddMenu) {
+        composable<Routes.AddMenu> {
             AddMenu(navController)
         }
 
-        composable(route = Routes.AllMenuItem) {
+        composable<Routes.AllMenuItem> {
             AllMenuItem(navController)
         }
 
-        composable(route = Routes.OutForDelivery) {
+        composable<Routes.OutForDelivery> {
             OutForDelivery(navController)
         }
 
-        composable(route = Routes.AdminFeedback) {
+        composable<Routes.AdminFeedback> {
             AdminFeedback(navController)
         }
 
-        composable(route = Routes.AdminProfile) {
+        composable<Routes.AdminProfile> {
             AdminProfile(navController)
         }
 
-        composable(route = Routes.CreateNewUserAdmin) {
+        composable<Routes.CreateNewUserAdmin> {
             CreateNewUserAdmin(navController)
         }
+
+
     }
 }
