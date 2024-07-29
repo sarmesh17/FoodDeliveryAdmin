@@ -1,4 +1,4 @@
-package com.example.fooddeliveryadmin.presentation.screenfour
+package com.example.fooddeliveryadmin.presentation.onadmindashboard
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

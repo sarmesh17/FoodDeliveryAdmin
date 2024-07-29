@@ -1,4 +1,4 @@
-package com.example.fooddeliveryadmin.presentation.screeneight
+package com.example.fooddeliveryadmin.presentation.onadminfeedback
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

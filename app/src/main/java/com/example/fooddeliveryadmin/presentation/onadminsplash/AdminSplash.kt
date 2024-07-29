@@ -1,4 +1,4 @@
-package com.example.fooddeliveryadmin.presentation.screenone
+package com.example.fooddeliveryadmin.presentation.onadminsplash
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable

@@ -5,16 +5,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.fooddeliveryadmin.presentation.screeneight.AdminFeedback
-import com.example.fooddeliveryadmin.presentation.screenfive.AddMenu
-import com.example.fooddeliveryadmin.presentation.screenfour.AdminDashboard
-import com.example.fooddeliveryadmin.presentation.screennine.AdminProfile
-import com.example.fooddeliveryadmin.presentation.screenone.AdminSplash
-import com.example.fooddeliveryadmin.presentation.screenseven.OutForDelivery
-import com.example.fooddeliveryadmin.presentation.screensix.AllMenuItem
-import com.example.fooddeliveryadmin.presentation.screenten.CreateNewUserAdmin
-import com.example.fooddeliveryadmin.presentation.screenthree.AdminSignUp
-import com.example.fooddeliveryadmin.presentation.screentwo.AdminLogin
+import com.example.fooddeliveryadmin.presentation.onadminfeedback.AdminFeedback
+import com.example.fooddeliveryadmin.presentation.onaddmenu.AddMenu
+import com.example.fooddeliveryadmin.presentation.onadmindashboard.AdminDashboard
+import com.example.fooddeliveryadmin.presentation.onadminprofile.AdminProfile
+import com.example.fooddeliveryadmin.presentation.onadminsplash.AdminSplash
+import com.example.fooddeliveryadmin.presentation.onoutfordelivery.OutForDelivery
+import com.example.fooddeliveryadmin.presentation.onallmenuitem.AllMenuItem
+import com.example.fooddeliveryadmin.presentation.oncreatenewuseradmin.CreateNewUserAdmin
+import com.example.fooddeliveryadmin.presentation.onadminsignup.AdminSignUp
+import com.example.fooddeliveryadmin.presentation.onadminlogin.AdminLogin
 
 @Preview(showSystemUi = true)
 @Composable

@@ -1,4 +1,4 @@
-package com.example.fooddeliveryadmin.presentation.screenseven
+package com.example.fooddeliveryadmin.presentation.onoutfordelivery
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement

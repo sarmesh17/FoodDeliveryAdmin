@@ -1,4 +1,4 @@
-package com.example.fooddeliveryadmin.presentation.screenfive
+package com.example.fooddeliveryadmin.presentation.onaddmenu
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

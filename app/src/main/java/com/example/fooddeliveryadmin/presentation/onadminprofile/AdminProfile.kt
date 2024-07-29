@@ -1,4 +1,4 @@
-package com.example.fooddeliveryadmin.presentation.screennine
+package com.example.fooddeliveryadmin.presentation.onadminprofile
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
